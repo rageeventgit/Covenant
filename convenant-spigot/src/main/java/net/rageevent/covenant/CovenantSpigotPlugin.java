@@ -1,6 +1,6 @@
 package net.rageevent.covenant;
 
-import net.rageevent.covenant.loader.BankLoader;
+import net.rageevent.covenant.storage.BankLoader;
 import net.rageevent.covenant.economy.loader.JsonBankLoader;
 import net.rageevent.covenant.economy.services.BankServiceImpl;
 import net.rageevent.covenant.storage.BankCache;

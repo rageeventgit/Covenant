@@ -1,6 +1,6 @@
 package net.rageevent.covenant;
 
-import net.rageevent.covenant.loader.BankLoader;
+import net.rageevent.covenant.storage.BankLoader;
 
 import java.util.UUID;
 

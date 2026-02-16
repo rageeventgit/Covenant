@@ -7,7 +7,7 @@ import lombok.SneakyThrows;
 import net.kyori.adventure.text.Component;
 import net.rageevent.covenant.Bank;
 import net.rageevent.covenant.economy.SimpleBank;
-import net.rageevent.covenant.loader.BankLoader;
+import net.rageevent.covenant.storage.BankLoader;
 import org.bukkit.plugin.Plugin;
 
 import java.io.IOException;

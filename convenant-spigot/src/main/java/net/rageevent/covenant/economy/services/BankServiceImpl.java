@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import net.rageevent.covenant.Bank;
 import net.rageevent.covenant.BankService;
 import net.rageevent.covenant.economy.SimpleBank;
-import net.rageevent.covenant.loader.BankLoader;
+import net.rageevent.covenant.storage.BankLoader;
 import net.rageevent.covenant.storage.BankCache;
 
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package net.rageevent.covenant.loader;
+package net.rageevent.covenant.storage;
 
 import net.rageevent.covenant.Bank;
 
