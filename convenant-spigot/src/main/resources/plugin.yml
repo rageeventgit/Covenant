@@ -1,0 +1,5 @@
+name: convenant-spigot
+version: '1.0-SNAPSHOT'
+main: net.rageevent.convenant.ConvenantSpigotPlugin
+api-version: '1.21'
+load: STARTUP

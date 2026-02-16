@@ -1,4 +1,7 @@
+package net.rageevent.covenant.economy;
+
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import net.rageevent.covenant.Bank;
 import net.rageevent.covenant.result.FailedTransactionResult;
 import net.rageevent.covenant.result.PassedTransactionResult;
@@ -8,17 +11,18 @@ import net.rageevent.covenant.statement.TransactionStatement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
-
-public class BasicBank implements Bank {
-
-    private final List<TransactionStatement> statements = new ArrayList<TransactionStatement>();
-    @Getter
+@RequiredArgsConstructor
+@Getter
+public class SimpleBank implements Bank {
     private int balance;
 
-    @Override
-    public List<TransactionStatement> getStatementHistory() {
-        return statements;
+    private final UUID bankId;
+    private final List<TransactionStatement> statementHistory;
+
+    public SimpleBank(UUID bankId) {
+        this(bankId, new ArrayList<>());
     }
 
     @Override
@@ -26,14 +30,14 @@ public class BasicBank implements Bank {
         TransactionStatement addStatement = new TransactionStatement(TransactionStateType.ADD, balance, amount);
         TransactionResult result = new PassedTransactionResult(addStatement);
 
-        statements.add(result.statement());
+        statementHistory.add(result.statement());
         balance = result.statement().finalized();
         return result;
     }
 
     public TransactionResult removeFromBalance(int amount) {
         TransactionStatement removeStatement = new TransactionStatement(TransactionStateType.REMOVE, balance, amount);
-        statements.add(removeStatement);
+        statementHistory.add(removeStatement);
 
         if (removeStatement.finalized() < 0) {
             balance = 0;

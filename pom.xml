@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>covenant-api</module>
+        <module>convenant-spigot</module>
     </modules>
 
     <properties>
