@@ -11,6 +11,6 @@ public interface BankService {
 
     void deleteBank(UUID bankId);
     void updateBank(Bank bank);
-
+    void saveBank(Bank bank);
     BankLoader getBankLoader();
 }

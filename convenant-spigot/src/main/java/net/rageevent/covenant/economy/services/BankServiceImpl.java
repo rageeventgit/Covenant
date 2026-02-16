@@ -1,4 +1,4 @@
-package net.rageevent.covenant.services;
+package net.rageevent.covenant.economy.services;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -42,5 +42,10 @@ public class BankServiceImpl implements BankService {
     @Override
     public void updateBank(Bank bank) {
         cache.save(bank);
+    }
+
+    @Override
+    public void saveBank(Bank bank) {
+        bankLoader.save(bank);
     }
 }
